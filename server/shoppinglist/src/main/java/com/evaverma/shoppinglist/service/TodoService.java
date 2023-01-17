@@ -22,11 +22,17 @@ public class TodoService {
         if (!todo.getStatus().equals("todo") && !todo.getStatus().equals("done")) {
             return false;
         }
+        
+        // Fixes #2: blank tittle is not allowed.
+        if (todo.getTitle().equals("")){
+            return false;
+        }
+
+        // check todo in todolist if it found todo with same id then it retrun false .
         for (Todo todo_ : todoList) {
             if(todo.getId().equals(todo_.getId())){
                 return false;
-            }
-            
+            }            
         }
 
         todoList.add(todo);
