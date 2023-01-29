@@ -24,6 +24,8 @@ export function useTodos() {
         select: (data): TodoType[] => {
             return data.data;
         },
+        cacheTime: 0,
+        staleTime: 0,
     });
 }
 
