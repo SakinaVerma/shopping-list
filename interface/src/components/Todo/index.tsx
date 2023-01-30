@@ -3,5 +3,5 @@ type Props = {
 };
 
 export default function Todo({ children }: Props) {
-    return <div className="flex justify-between gap-x-1">{children}</div>;
+    return <div className="flex w-full items-center justify-between rounded bg-slate-800 p-3">{children}</div>;
 }
