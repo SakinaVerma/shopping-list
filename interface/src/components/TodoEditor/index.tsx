@@ -50,7 +50,7 @@ export default function TodoEditor({ todo, setEditId }: Props) {
 
     return (
         <>
-            <div className={`flex w-full items-center rounded border border-purple-500`}>
+            <div className={`flex w-full items-center rounded border border-purple-600`}>
                 <Todo>
                     <input
                         type="text"
@@ -60,9 +60,6 @@ export default function TodoEditor({ todo, setEditId }: Props) {
                         onChange={(event) => setNewTodo({ ...newTodo, title: event.target.value })}
                     />
                     <div className={`flex gap-x-2`}>
-                        <Button variant={newTodo.id === "" ? "primary" : "success"} onClick={() => handleAddNewTodo()}>
-                            {newTodo.id === "" ? <FaPlus /> : <FaCheck />}
-                        </Button>
                         <Button
                             variant="secondary"
                             onClick={() => {
@@ -72,6 +69,9 @@ export default function TodoEditor({ todo, setEditId }: Props) {
                             }}
                         >
                             <FaTimes />
+                        </Button>
+                        <Button variant={newTodo.id === "" ? "primary" : "success"} onClick={() => handleAddNewTodo()}>
+                            {newTodo.id === "" ? <FaPlus /> : <FaCheck />}
                         </Button>
                     </div>
                 </Todo>

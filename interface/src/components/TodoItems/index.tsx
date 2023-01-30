@@ -51,20 +51,11 @@ export default function TodoItems({ completedTodosCount, setCompletedTodosCount 
                                         <TodoEditor todo={todo} setEditId={setEditId} />
                                     ) : (
                                         <div
-                                            className={`flex w-full items-center rounded border border-slate-800 hover:border-purple-500`}
+                                            className={`flex w-full items-center rounded border border-slate-800 hover:border-green-600`}
                                         >
                                             <Todo key={todo.id}>
                                                 <p className={`text-xl`}>{todo.title}</p>
                                                 <div className="flex gap-x-2">
-                                                    <Button
-                                                        variant="success"
-                                                        onClick={() => {
-                                                            (todo.status = "done"), updateTodo.mutate(todo);
-                                                            setCompletedTodosCount(completedTodosCount + 1);
-                                                        }}
-                                                    >
-                                                        <FaCheck />
-                                                    </Button>
                                                     <Button
                                                         variant="secondary"
                                                         onClick={() => {
@@ -73,6 +64,15 @@ export default function TodoItems({ completedTodosCount, setCompletedTodosCount 
                                                         }}
                                                     >
                                                         <FaEdit />
+                                                    </Button>
+                                                    <Button
+                                                        variant="success"
+                                                        onClick={() => {
+                                                            (todo.status = "done"), updateTodo.mutate(todo);
+                                                            setCompletedTodosCount(completedTodosCount + 1);
+                                                        }}
+                                                    >
+                                                        <FaCheck />
                                                     </Button>
                                                     {/* <Button variant="danger" onClick={() => deleteTodo.mutate(todo.id)}>
                                                         <FaTrash />

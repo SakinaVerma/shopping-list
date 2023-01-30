@@ -50,7 +50,7 @@ export default function CheckedItems({ completedTodosCount, setCompletedTodosCou
                         <>
                             {todo.status === "done" && (
                                 <div
-                                    className={`flex w-full items-center rounded border border-slate-800 hover:border-purple-500`}
+                                    className={`flex w-full items-center rounded border border-slate-800 hover:border-green-600`}
                                 >
                                     <Todo key={todo.id}>
                                         <p className={`text-xl line-through`}>{todo.title}</p>

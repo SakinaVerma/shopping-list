@@ -23,7 +23,7 @@ function App() {
     }, [todos]);
 
     return (
-        <div className="flex min-h-screen w-full flex-col items-center gap-y-4 bg-gray-900 p-4 text-white">
+        <div className="flex min-h-screen w-full flex-col items-center gap-y-4 bg-gray-900 p-4 text-slate-200">
             <div className="flex min-h-[400px] w-full max-w-lg flex-col gap-y-4">
                 <TodoItems completedTodosCount={completedTodosCount} setCompletedTodosCount={setCompletedTodosCount} />
                 <TodoEditor />
